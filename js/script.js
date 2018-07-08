@@ -1,5 +1,5 @@
 // react
-var movies = {a: 
+var movies = {a:  
     {
       id: 1,
       title: 'Terminato 1 ',
@@ -28,13 +28,13 @@ var movies = {a:
       boxoffice: 'zarobił : 371 353 001 mln dolarów',
       img: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Terminator-salvation-poster.jpg/220px-Terminator-salvation-poster.jpg'
     }
-  }
+  };
 
-var MovieA = React.createClass({
+var Movie = React.createClass({
   propTypes: {
       movies: React.PropTypes.object.isRequired 
   },
-  render: function(value){
+  render: function(){
           return(
             React.createElement('ul',{},
             React.createElement('li', {key: this.props.movies.a.id},
@@ -43,35 +43,81 @@ var MovieA = React.createClass({
             React.createElement('p', {}, this.props.movies.a.boxoffice),
             React.createElement('img',{src: this.props.movies.a.img})
            ))
-
-           
-
-           
-          
-          
-          
-          
-          
-          
-          
-          
+      
           )
         }});   
-          
-          
-          
-          
-          
-     
-             
-          
-
-
-
-
-var element = React.createElement(MovieA, {movies: movies});
+ 
+var element = React.createElement(Movie, {movies});
 ReactDOM.render(element, document.getElementById('app'));
 
+/* ==========================================================================*/
 
-
+var Movieb = React.createClass({
+  propTypes: {
+      movies: React.PropTypes.object.isRequired 
+  },
+  render: function(){
+          return(
+            React.createElement('ul',{},
+            React.createElement('li', {key: this.props.movies.b.id},
+            React.createElement('h2', {}, this.props.movies.b.title),
+            React.createElement('p',{}, this.props.movies.b.desc),
+            React.createElement('p', {}, this.props.movies.b.boxoffice),
+            React.createElement('img',{src: this.props.movies.b.img})
+           ))
+      
+          )
+        }});   
  
+var element = React.createElement(Movieb, {movies});
+ReactDOM.render(element, document.getElementById('appb'));
+
+
+
+/* ==========================================================================*/
+
+var Moviec = React.createClass({
+  propTypes: {
+      movies: React.PropTypes.object.isRequired 
+  },
+  render: function(){
+          return(
+            React.createElement('ul',{},
+            React.createElement('li', {key: this.props.movies.c.id},
+            React.createElement('h2', {}, this.props.movies.c.title),
+            React.createElement('p',{}, this.props.movies.c.desc),
+            React.createElement('p', {}, this.props.movies.c.boxoffice),
+            React.createElement('img',{src: this.props.movies.c.img})
+           ))
+      
+          )
+        }});   
+ 
+var element = React.createElement(Moviec, {movies});
+ReactDOM.render(element, document.getElementById('appc'));
+
+
+/* ==========================================================================*/
+
+var Movied = React.createClass({
+  propTypes: {
+      movies: React.PropTypes.object.isRequired 
+  },
+  render: function(){
+          return(
+            React.createElement('ul',{},
+            React.createElement('li', {key: this.props.movies.d.id},
+            React.createElement('h2', {}, this.props.movies.d.title),
+            React.createElement('p',{}, this.props.movies.d.desc),
+            React.createElement('p', {}, this.props.movies.d.boxoffice),
+            React.createElement('img',{src: this.props.movies.d.img})
+           ))
+      
+          )
+        }});   
+ 
+var element = React.createElement(Movied, {movies});
+ReactDOM.render(element, document.getElementById('appd'));
+
+
+

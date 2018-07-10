@@ -30,34 +30,71 @@ var movies = [
     }
   ]
 
-var Movie = React.createClass({
-  propTypes: {
-      movies: React.PropTypes.array.isRequired 
-  },
-  render: function(){
-        var moviesElement = movies.map(function(movie){
-              return(
-              
-              React.createElement('li', {key: movie.id},
-              React.createElement('p', {}, movie.title),
-              React.createElement('p', {}, movie.desc),
-              React.createElement('p', {}, movie.boxoffice),
-              React.createElement('p', {}, 
-                  React.createElement('img', {src: movie.img}))
-              ))
-            })      
-         
-        
-        return React.createElement('ul', {}, moviesElement)
-  }
-})
+  var Movie = React.createClass({
+    propTypes: {
+        movies: React.PropTypes.array.isRequired 
+    },
+    render: function(){
+          var moviesElement = movies.map(function(movie){
+                return(
+                  React.createElement('li', {key: movie.id},
+                  React.createElement('p', {}, movie.title),
+                ))
+              }) 
+              return React.createElement('ul', {}, moviesElement)
+            }
+          })           
+
+  var MovieBox = React.createClass({
+    propTypes: {
+        movies: React.PropTypes.array.isRequired 
+    },
+    render: function(){
+          var moviesElement = movies.map(function(movie){
+                return(
+                  React.createElement('li', {key: movie.id},
+                  React.createElement('p', {}, movie.desc),
+                  React.createElement('p', {}, movie.boxoffice)
+                ))
+              }) 
+              return React.createElement('ul', {}, moviesElement)
+            }
+          })  
           
-    
-    
-    
- 
-var element = React.createElement(Movie, {movies});
-ReactDOM.render(element, document.getElementById('app'));
+
+
+    var MovieImg = React.createClass({
+      propTypes: {
+          movies: React.PropTypes.array.isRequired 
+      },
+      render: function(){
+            var moviesElement = movies.map(function(movie){
+                  return(
+                    React.createElement('li', {key: movie.id},
+                    React.createElement('img', {src: movie.img})
+                  
+                  ))
+                }) 
+                return React.createElement('ul', {}, moviesElement)
+              }
+            })   
+            
+var element = React.createElement(MovieImg, {movies});
+ReactDOM.render(element, document.getElementById('app'));            
+
+
+  
+
+                
+           
+  
+            
+      
+      
+      
+
+
+
 
 
 
